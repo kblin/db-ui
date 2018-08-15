@@ -1,0 +1,212 @@
+@import 'secmet.less';
+@antismash-red: #810e15;
+@dark-gray: #444;
+@antismash-gray: #1d1414;
+@medium-gray: #444;
+@light-gray: #eee;
+@light-red: #aa0000;
+@tooltip-border: slategray;
+@tooltip-background: #ddd;
+// svgene genetype colors
+@gene-type-other: gray;
+@gene-type-biosynthetic: @antismash-red;
+@gene-type-regulatory: seagreen;
+@gene-type-transport: cornflowerblue;
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.wide-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  @media (min-width: 768px){
+    width: 750px;
+  }
+  @media (min-width: 992px){
+    width: 970px;
+  }
+  @media (min-width: 1200px){
+    width: 1170px;
+  }
+  @media (min-width: 1600px){
+    width: 1560px;
+  }
+}
+
+.navbar-antismash {
+  border-bottom: 4px solid @antismash-red;
+}
+
+.fake-button {
+  color: @dark-gray;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.cluster-view {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.cluster-header{
+  font-size: 90%;
+  background-color: @antismash-red;
+  color: white;
+  margin: 0.1em 0 0.4em 0.1em;
+  padding: 0.2em 0 0.2em 1em;
+  border-radius: 3px;
+}
+
+.cluster-download {
+  display: block;
+  float: right;
+}
+
+.spacer{
+  margin: 0.5em;
+}
+
+.search-box {
+  padding-top: 2em;
+}
+
+.search-button {
+  padding-top: 2em;
+}
+
+.cluster-list {
+  cursor: pointer;
+}
+
+.link-external::after {
+  font-family: "FontAwesome";
+  font-size: 80%;
+  content: "\f08e";
+}
+
+.similarity-high {
+  color: darkgreen;
+}
+
+.similarity-medium {
+  color: chocolate;
+}
+
+.similarity-low {
+  color: indianred;
+}
+
+.stats-top {
+  background-color: @light-gray;
+}
+
+.stats-definition-term {
+  font-weight: bold;
+}
+
+.stats-definition-data {
+  font-weight: bold;
+  float: right;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  padding-top: 0.25em;
+  border-top: 1px solid @antismash-red;
+  margin-top: 2em;
+}
+
+.org-logos {
+  margin-top: 1em;
+}
+
+.cite-me {
+  margin-top: 1em;
+}
+
+.digits {
+  text-align: right;
+}
+
+.cluster-type {
+  text-align: center;
+}
+
+.pattern-list {
+  margin: 1em 0;
+  padding: 2em 1em;
+  border-radius: 8px;
+  border: 1px dashed @dark-gray;
+}
+
+.query-operation {
+  list-style: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: @light-gray;
+}
+
+.pad-left-1{
+  padding-left: 1em;
+}
+
+.jstree-container {
+  overflow-y: auto;
+  @media (min-height: 500px) {
+    max-height: 200px;
+  }
+  @media (min-height: 750px) {
+    max-height: 450px;
+  }
+  @media (min-height: 1000px) {
+    max-height: 750px;
+  }
+}
+
+.tooltip {
+    border: 2px solid @tooltip-border;
+    background-color: @tooltip-background;
+    display: none;
+    position: absolute;
+    font-size: 80%;
+    padding: 0.5em;
+    color: @antismash-red;
+}
+
+.svgene-type-other {
+    fill: @gene-type-other;
+    stroke: black;
+}
+.svgene-type-biosynthetic {
+    fill: @gene-type-biosynthetic;
+    stroke: black;
+}
+.svgene-type-transport {
+    fill: @gene-type-transport;
+    stroke: black;
+}
+.svgene-type-regulatory {
+    fill: @gene-type-regulatory;
+    stroke: black;
+}
+.svgene-line {
+    stroke-width: 1px;
+    stroke: #888;
+}
+.svgene-locustag {
+    fill: @antismash-red;
+    display: none;
+    font-size: 80%;
+}
+.svgene-tooltip {
+    .tooltip;
+}
+
+.svgene-tooltip-bold {
+    font-weight: bold;
+    font-size: 120%;
+}

@@ -1,0 +1,57 @@
+<div class="container">
+<div class="page-header">
+  <h1>Statistics</h1>
+</div>
+
+<div class="row" id="stats-general">
+  <h3>General statistics <small>database contains</small></h3>
+  <ul class="list-group">
+    <li class="list-group-item col-md-12 stats-top">
+      <span class="stats-definition-term">Total Secondary Metabolite Clusters:</span>
+      <span class="stats-definition-data text-info">{{$ctrl.general_stats.num_clusters}}</span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Most clusters:</span>
+      <span class="stats-definition-data text-info">
+        <a ui-sref="show.genome({'id': $ctrl.general_stats.top_secmet_assembly_id})" uib-tooltip="foo">
+          {{$ctrl.general_stats.top_secmet_species}}
+        </a>
+      </span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Clusters in top taxon:</span>
+      <span class="stats-definition-data text-info">{{$ctrl.general_stats.top_secmet_taxon_count}}</span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Unique species/strains:</span>
+      <span class="stats-definition-data text-info">{{$ctrl.general_stats.num_genomes}}</span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Unique sequences:</span>
+      <span class="stats-definition-data text-info">{{$ctrl.general_stats.num_sequences}}</span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Species with most sequences:</span>
+      <span class="stats-definition-data text-info">
+        <a ng-click="$ctrl.queryTopSpecies()">{{$ctrl.general_stats.top_seq_species}}</a>
+      </span>
+    </li>
+    <li class="list-group-item col-md-6">
+      <span class="stats-definition-term">Sequences in top taxon:</span>
+      <span class="stats-definition-data text-info">{{$ctrl.general_stats.top_seq_taxon_count}}</span>
+    </li>
+  </ul>
+</div>
+
+<div class="row" id="stats-cluster-count">
+  <h3>Secondary Metabolite cluster counts <small>by type</small></h3>
+  <ul class="list-group">
+    <li class="list-group-item col-md-6" ng-repeat="cluster in $ctrl.sec_met_clusters">
+      <span class="badge" ng-class="cluster.name">{{cluster.count}}</span>
+      <a ui-sref="query({'search_string': '[type]'+cluster.name})">{{cluster.description}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="row"></div>
+</div>

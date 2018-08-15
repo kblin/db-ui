@@ -1,0 +1,19 @@
+<div class="spacer"></div>
+<div class="row wide-container">
+  <div class="col-md-4">
+    <input type="text" class="ng-tree-search form-control" placeholder="Search by genus, species or strain" id="taxonomy-search" />
+  </div>
+</div>
+<div class="row wide-container">
+  <div class="col-md-4 panel panel-default">
+    <div class="panel-body jstree-container">
+      <js-tree tree-plugins="wholerow,types,search" tree-ajax="/api/v1.0/tree/taxa" tree-events="activate_node:activate_cb" tree-types="tree_types"
+               tree-search-url="/api/v1.0/tree/taxa/search" tree-search-input="taxonomy-search"></js-tree>
+    </div>
+  </div>
+  <div class="col-md-8 panel panel-default">
+    <div class="panel-body">
+      <as-genome genome-id="$ctrl.active"></as-genome>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="antismash.db.ui">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>antiSMASH database</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-antismash">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="images/antismash_db_logo.svg" alt="antiSMASH logo" width="30px">
+        </a>
+        <a class="navbar-brand" href="#">
+          antiSMASH database
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#!/stats"><i class="fa fa-bar-chart"></i> &nbsp; Statistics</a></li>
+        <li><a href="#!/query"><i class="fa fa-search"></i> &nbsp; Query</a></li>
+        <li><a href="#!/browse"><i class="fa fa-compass"></i> &nbsp; Browse</a></li>
+        <li><a href="#!/about"><i class="fa fa-info"></i> &nbsp; About</a></li>
+        <li><a href="#!/help"><i class="fa fa-question"></i> &nbsp; Help</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div ui-view>Please wait, loading...</div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="col-sm-2">
+        <img src="images/antismash_db_logo.svg" height="100px">
+      </div>
+      <div class="col-sm-6 cite-me well">
+        If you have found the antiSMASH database useful, please <a href="#!/about">cite us</a>.
+      </div>
+      <div class="col-sm-4 org-logos">
+        <div class="col-sm-4">
+          <img src="images/dtu_logo.svg" height="80px">
+        </div>
+        <div class="col-sm-4">
+          <img src="images/cfb_logo.svg" height="80px">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
