@@ -7,7 +7,7 @@
 
 <div ng-if="$ctrl.term.term_type == 'expr'" class="row">
   <div class="col-sm-3">
-    <select class="form-control" ng-options="o.val as o.desc group by o.category for o in $ctrl.categories" ng-model="$ctrl.term.category"></select>
+    <select class="form-control" ng-options="o.val as o.desc group by o.category for o in $ctrl.CategoryService.categories" ng-model="$ctrl.term.category"></select>
   </div>
   <div class="col-sm-4">
     <input type="text" class="form-control" ng-model="$ctrl.term.term"
@@ -39,7 +39,7 @@
         <label class="btn btn-default" ng-model="$ctrl.term.operation" uib-btn-radio="'except'">EXCEPT</label>
       </div>
       <div class="col-sm-2 col-sm-offset-5">
-        <button class="btn btn-default" ng-click="$ctrl.swap()"><i class="fa fa-refresh"></i> Swap terms</button>
+        <button class="btn btn-default" ng-click="$ctrl.term.swap()"><i class="fa fa-refresh"></i> Swap terms</button>
       </div>
     </li>
     <li class="list-group-item row">

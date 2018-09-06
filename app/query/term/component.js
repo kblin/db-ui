@@ -14,15 +14,32 @@ export class QueryTerm {
   }
 
   swap() {
-    var tmp = this.left;
-    this.left = this.right;
-    this.right = tmp;
+    [this.left, this.right] = [this.right, this.left];
+  }
+
+  isValid() {
+    if (this.term_type == 'expr') {
+      if (this.category === '') {
+        return false;
+      }
+      if (this.term === '') {
+        return false;
+      }
+      return true;
+    }
+    if (this.term_type == 'op') {
+      return this.left.isValid() && this.right.isValid();
+    }
+    return false;
   }
 }
 
 export default class QueryTermController {
-  constructor(term) {
-    this.term = term ? term : new QueryTerm();
+  constructor(CategoryService) {
+    this.CategoryService = CategoryService;
+    if (! this.term ) {
+      this.term = new QueryTerm();
+    }
   }
 
   add() {

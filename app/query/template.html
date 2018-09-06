@@ -48,6 +48,10 @@
       </div>
       <div class="row">
         <div class="col-md-2">
+          <button class="btn btn-default btn-block" ng-click="$ctrl.loadComplexExample()"><i class="fa"></i>Load example search</button>
+        </div>
+
+        <div class="col-md-2 col-md-offset-8">
           <button ng-if="$ctrl.showSearch()" class="btn btn-primary btn-block" ng-click="$ctrl.search()" ng-disabled="!$ctrl.isValidSearch()">
             <i class="fa fa-search"></i> Search
           </button>
@@ -57,10 +61,6 @@
           <a ng-if="!$ctrl.showSearch() && $ctrl.bowser.safari" class="btn btn-primary btn-block" ng-href="{{$ctrl.getExportUrl()}}" ng-disabled="!$ctrl.isValidSearch()" download>
             <i class="fa fa-download"></i> Download
           </a>
-        </div>
-
-        <div class="col-md-2 col-md-offset-8">
-          <button class="btn btn-default btn-block" ng-click="$ctrl.loadComplexExample()"><i class="fa"></i>Load example search</button>
         </div>
       </div>
     </uib-tab>

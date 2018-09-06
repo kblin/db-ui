@@ -1,3 +1,5 @@
+import { QueryTerm } from './term/component.js';
+
 export class Query {
   constructor(terms, search, return_type) {
     this.search = search ? search : 'cluster';
@@ -9,6 +11,7 @@ export class Query {
     if (!this.terms) {
       return false;
     }
+    return this.terms.isValid();
   }
 }
 
@@ -21,7 +24,7 @@ export default class QueryController {
 
     this.search_string = '';
 
-    this.query = new Query({term_type: 'expr', category: '', term: '',});
+    this.query = new Query(new QueryTerm());
   }
 
   $onInit() {
@@ -47,6 +50,20 @@ export default class QueryController {
       }
       return true;
     }
+  }
+
+  showSearch() {
+    if (!this.query) {
+      return true;
+    }
+    if (this.graphicalPossible()) {
+      return true;
+    }
+    return false;
+  }
+
+  graphicalPossible() {
+    return this.query.return_type == 'json';
   }
 
 };
